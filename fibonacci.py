@@ -1,12 +1,13 @@
 """
 la suite de fibonacci
 """
-
-def fibo(n):
+import functools 
+@functools.cache
+def fibo_cached(n):
     """
     # une implémentation naïve et inefficace
     """
     if n <= 1:
         return n
     else:
-        return fibo(n-1) + fibo(n-2)
+        return fibo_cached(n-1) + fibo_cached(n-2)
